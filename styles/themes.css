@@ -1,0 +1,164 @@
+/* Light Theme (Default) */
+:root {
+    /* Base Colors */
+    --primary: #1e40af;
+    --secondary: #0ea5e9;
+    --success: #059669;
+    --warning: #d97706;
+    --danger: #dc2626;
+    
+    /* Background & Surface */
+    --background: #f8fafc;
+    --surface: #ffffff;
+    --surface-hover: #f1f5f9;
+    
+    /* Text Colors */
+    --text: #0f172a;
+    --text-secondary: #64748b;
+    
+    /* Border & Divider */
+    --border: #e2e8f0;
+    --divider: #f1f5f9;
+    
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
+    --gradient-success: linear-gradient(135deg, #059669 0%, #10b981 100%);
+    --gradient-warning: linear-gradient(135deg, #d97706 0%, #fbbf24 100%);
+    --gradient-danger: linear-gradient(135deg, #dc2626 0%, #ef4444 100%);
+    
+    /* Charts */
+    --chart-gradient: linear-gradient(180deg, rgba(37,99,235,0.2) 0%, rgba(37,99,235,0) 100%);
+    --chart-line: #1e40af;
+    --chart-grid: #e2e8f0;
+    
+    /* Shadows */
+    --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+/* Dark Theme */
+[data-theme="dark"] {
+    /* Base Colors */
+    --primary: #3b82f6;
+    --secondary: #38bdf8;
+    --success: #10b981;
+    --warning: #f59e0b;
+    --danger: #ef4444;
+    
+    /* Background & Surface */
+    --background: #0f172a;
+    --surface: #1e293b;
+    --surface-hover: #334155;
+    
+    /* Text Colors */
+    --text: #f8fafc;
+    --text-secondary: #94a3b8;
+    
+    /* Border & Divider */
+    --border: #334155;
+    --divider: #1e293b;
+    
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, #1d4ed8 0%, #3b82f6 100%);
+    --gradient-success: linear-gradient(135deg, #059669 0%, #10b981 100%);
+    --gradient-warning: linear-gradient(135deg, #d97706 0%, #fbbf24 100%);
+    --gradient-danger: linear-gradient(135deg, #dc2626 0%, #ef4444 100%);
+    
+    /* Charts */
+    --chart-gradient: linear-gradient(180deg, rgba(59,130,246,0.2) 0%, rgba(59,130,246,0) 100%);
+    --chart-line: #3b82f6;
+    --chart-grid: #334155;
+    
+    /* Shadows */
+    --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.3);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.4);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.4);
+}
+
+/* High Contrast Theme */
+[data-theme="high-contrast"] {
+    /* Base Colors */
+    --primary: #0040ff;
+    --secondary: #0080ff;
+    --success: #008000;
+    --warning: #ffa500;
+    --danger: #ff0000;
+    
+    /* Background & Surface */
+    --background: #ffffff;
+    --surface: #f0f0f0;
+    --surface-hover: #e0e0e0;
+    
+    /* Text Colors */
+    --text: #000000;
+    --text-secondary: #404040;
+    
+    /* Border & Divider */
+    --border: #000000;
+    --divider: #c0c0c0;
+    
+    /* Charts */
+    --chart-gradient: none;
+    --chart-line: #0040ff;
+    --chart-grid: #808080;
+}
+
+/* Custom Theme - Ocean */
+[data-theme="ocean"] {
+    --primary: #0077b6;
+    --secondary: #00b4d8;
+    --success: #2cb67d;
+    --warning: #ff9e00;
+    --danger: #ef476f;
+    
+    --background: #caf0f8;
+    --surface: #ffffff;
+    --surface-hover: #f0f9ff;
+    
+    --chart-gradient: linear-gradient(180deg, rgba(0,119,182,0.2) 0%, rgba(0,119,182,0) 100%);
+    --chart-line: #0077b6;
+}
+
+/* Custom Theme - Forest */
+[data-theme="forest"] {
+    --primary: #2d6a4f;
+    --secondary: #40916c;
+    --success: #52b788;
+    --warning: #ffd166;
+    --danger: #ef476f;
+    
+    --background: #f0fff4;
+    --surface: #ffffff;
+    --surface-hover: #ecfdf5;
+    
+    --chart-gradient: linear-gradient(180deg, rgba(45,106,79,0.2) 0%, rgba(45,106,79,0) 100%);
+    --chart-line: #2d6a4f;
+}
+
+/* Theme Transition */
+* {
+    transition: background-color 0.3s, border-color 0.3s, color 0.3s;
+}
+
+/* Print Theme */
+@media print {
+    :root {
+        --primary: #000000;
+        --text: #000000;
+        --text-secondary: #404040;
+        --background: #ffffff;
+        --surface: #ffffff;
+        --border: #000000;
+        --chart-line: #000000;
+        --chart-grid: #c0c0c0;
+        --shadow-sm: none;
+        --shadow-md: none;
+        --shadow-lg: none;
+    }
+    
+    * {
+        print-color-adjust: exact;
+        -webkit-print-color-adjust: exact;
+    }
+}

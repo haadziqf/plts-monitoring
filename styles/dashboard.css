@@ -1,0 +1,290 @@
+/* Energy Flow Diagram */
+.flow-diagram {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--spacing-lg);
+    background: linear-gradient(135deg, var(--surface) 0%, var(--background) 100%);
+    border-radius: var(--radius-lg);
+    margin: var(--spacing-md) 0;
+}
+
+.flow-component {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-sm);
+    padding: var(--spacing-md);
+    background-color: var(--surface);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-sm);
+    min-width: 120px;
+}
+
+.flow-component .icon {
+    font-size: 2rem;
+}
+
+.flow-component .label {
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+}
+
+.flow-component .value {
+    font-weight: 600;
+    color: var(--primary);
+}
+
+.flow-arrows {
+    color: var(--primary);
+    font-size: 1.5rem;
+}
+
+/* Health Indicators */
+.health-indicators {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: var(--spacing-md);
+    margin-top: var(--spacing-md);
+}
+
+.health-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-sm);
+    padding: var(--spacing-md);
+    background-color: var(--surface);
+    border-radius: var(--radius-md);
+    border: 1px solid var(--border);
+}
+
+.health-item .icon {
+    font-size: 1.25rem;
+}
+
+.health-item .label {
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+}
+
+/* Efficiency Meter */
+.efficiency-meter {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-md);
+}
+
+.circular-progress {
+    position: relative;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background: conic-gradient(var(--primary) var(--progress), var(--border) 0deg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.circular-progress::before {
+    content: '';
+    position: absolute;
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    background-color: var(--surface);
+}
+
+.progress-value {
+    position: relative;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--primary);
+}
+
+/* Prediction Card */
+.prediction-card {
+    background: linear-gradient(135deg, var(--surface) 0%, var(--background) 100%);
+    padding: var(--spacing-lg);
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--border);
+}
+
+.prediction-header {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-md);
+}
+
+.prediction-header .icon {
+    font-size: 1.5rem;
+}
+
+.prediction-header .time {
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+}
+
+.prediction-value {
+    font-size: 2rem;
+    font-weight: 600;
+    color: var(--success);
+    margin-bottom: var(--spacing-sm);
+}
+
+.prediction-detail {
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+}
+
+/* Environmental Stats */
+.env-stats {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-md);
+}
+
+.env-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: var(--spacing-md);
+    background-color: var(--surface);
+    border-radius: var(--radius-md);
+    border: 1px solid var(--border);
+}
+
+.env-item .icon {
+    font-size: 1.5rem;
+    margin-bottom: var(--spacing-sm);
+}
+
+.env-item .label {
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+    text-align: center;
+    margin-bottom: var(--spacing-xs);
+}
+
+.env-item .value {
+    font-weight: 600;
+    color: var(--text);
+}
+
+/* Time Controls */
+.time-controls {
+    display: flex;
+    gap: var(--spacing-xs);
+}
+
+.time-btn {
+    padding: var(--spacing-xs) var(--spacing-sm);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    background: var(--surface);
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.time-btn:hover {
+    border-color: var(--primary);
+    color: var(--primary);
+}
+
+.time-btn.active {
+    background: var(--primary);
+    color: white;
+    border-color: var(--primary);
+}
+
+/* Chart Container */
+.chart-container {
+    height: 300px;
+    margin: var(--spacing-md) 0;
+    padding: var(--spacing-md);
+    background-color: var(--surface);
+    border-radius: var(--radius-md);
+    border: 1px solid var(--border);
+}
+
+/* Daily Stats */
+.stat-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--spacing-sm) 0;
+    border-bottom: 1px solid var(--border);
+}
+
+.stat-row:last-child {
+    border-bottom: none;
+}
+
+.stat-row .label {
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+}
+
+.stat-row .value {
+    font-weight: 500;
+    color: var(--text);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1024px) {
+    .flow-diagram {
+        flex-direction: column;
+        gap: var(--spacing-md);
+    }
+
+    .flow-arrows {
+        transform: rotate(90deg);
+    }
+
+    .env-stats {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .chart-container {
+        height: 250px;
+    }
+
+    .prediction-card {
+        padding: var(--spacing-md);
+    }
+}
+
+/* Loading States */
+.loading {
+    position: relative;
+    overflow: hidden;
+}
+
+.loading::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    transform: translateX(-100%);
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.2),
+        transparent
+    );
+    animation: shimmer 2s infinite;
+}
+
+@keyframes shimmer {
+    100% {
+        transform: translateX(100%);
+    }
+}

@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PLTS Monitoring System</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/dashboard.css">
+    <link rel="stylesheet" href="styles/charts.css">
+    <link rel="stylesheet" href="styles/themes.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <!-- Top Bar -->
+        <header class="top-bar">
+            <div class="logo-title">
+                <h1>PLTS Monitor Pro</h1>
+                <span class="status-badge online">System Online</span>
+            </div>
+            <div class="top-stats">
+                <div class="weather-widget">
+                    <span class="temperature">23°C</span>
+                    <span class="weather-icon">🌤️</span>
+                </div>
+                <div class="system-controls">
+                    <button class="icon-btn" title="Notifications">🔔</button>
+                    <button class="icon-btn" title="Settings">⚙️</button>
+                </div>
+                <div class="time-display">13:45:22</div>
+            </div>
+        </header>
+
+        <!-- Main Dashboard Grid -->
+        <main class="dashboard-grid">
+            <!-- Left Panel - Live Stats -->
+            <section class="panel stats-panel">
+                <div class="panel-section current-stats">
+                    <h2>Live Stats</h2>
+                    <div class="stat-card power">
+                        <span class="stat-label">Power Output</span>
+                        <span class="stat-value">2.1 kW</span>
+                    </div>
+                    <div class="stat-card voltage">
+                        <span class="stat-label">Voltage</span>
+                        <span class="stat-value">220 V</span>
+                    </div>
+                    <div class="stat-card current">
+                        <span class="stat-label">Current</span>
+                        <span class="stat-value">9.5 A</span>
+                    </div>
+                    <div class="stat-card frequency">
+                        <span class="stat-label">Frequency</span>
+                        <span class="stat-value">50 Hz</span>
+                    </div>
+                </div>
+
+                <div class="panel-section daily-stats">
+                    <h2>Today's Summary</h2>
+                    <div class="stat-row">
+                        <span class="label">Peak Power</span>
+                        <span class="value">3.2 kW</span>
+                    </div>
+                    <div class="stat-row">
+                        <span class="label">Minimum Power</span>
+                        <span class="value">0.5 kW</span>
+                    </div>
+                    <div class="stat-row">
+                        <span class="label">Average Power</span>
+                        <span class="value">1.8 kW</span>
+                    </div>
+                </div>
+
+                <div class="panel-section efficiency">
+                    <h2>System Efficiency</h2>
+                    <div class="efficiency-meter">
+                        <div class="circular-progress" data-value="92">
+                            <span class="progress-value">92%</span>
+                        </div>
+                        <span class="label">Overall Efficiency</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Center Panel - Main Content -->
+            <section class="panel main-panel">
+                <div class="panel-section power-graph">
+                    <h2>Power Output
+                        <div class="time-controls">
+                            <button class="time-btn active">24h</button>
+                            <button class="time-btn">Week</button>
+                            <button class="time-btn">Month</button>
+                        </div>
+                    </h2>
+                    <div class="chart-container">
+                        <canvas id="powerChart"></canvas>
+                    </div>
+                </div>
+
+                <div class="panel-section energy-flow">
+                    <h2>Energy Flow Diagram</h2>
+                    <div class="flow-diagram">
+                        <div class="flow-component solar">
+                            <span class="icon">☀️</span>
+                            <span class="label">Solar Panels</span>
+                            <span class="value">2.1 kW</span>
+                        </div>
+                        <div class="flow-arrows">⟶</div>
+                        <div class="flow-component inverter">
+                            <span class="icon">🔄</span>
+                            <span class="label">Inverter</span>
+                            <span class="value">2.0 kW</span>
+                        </div>
+                        <div class="flow-arrows">⟶</div>
+                        <div class="flow-component load">
+                            <span class="icon">🏠</span>
+                            <span class="label">Load</span>
+                            <span class="value">1.8 kW</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="panel-section health-monitor">
+                    <h2>System Health</h2>
+                    <div class="health-indicators">
+                        <div class="health-item">
+                            <span class="icon">🟢</span>
+                            <span class="label">Panels</span>
+                        </div>
+                        <div class="health-item">
+                            <span class="icon">🟢</span>
+                            <span class="label">Inverter</span>
+                        </div>
+                        <div class="health-item">
+                            <span class="icon">🟢</span>
+                            <span class="label">Network</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Right Panel - Analytics -->
+            <section class="panel analytics-panel">
+                <div class="panel-section economics">
+                    <h2>Economic Impact</h2>
+                    <div class="stat-card savings">
+                        <span class="stat-label">Today's Savings</span>
+                        <span class="stat-value">Rp 50.000</span>
+                    </div>
+                    <div class="stat-card roi">
+                        <span class="stat-label">ROI Progress</span>
+                        <span class="stat-value">65%</span>
+                    </div>
+                </div>
+
+                <div class="panel-section predictions">
+                    <h2>Performance Prediction</h2>
+                    <div class="prediction-card">
+                        <div class="prediction-header">
+                            <span class="icon">☀️</span>
+                            <span class="time">Next 24h</span>
+                        </div>
+                        <div class="prediction-value">+10%</div>
+                        <div class="prediction-detail">Expected increase in output</div>
+                    </div>
+                </div>
+
+                <div class="panel-section environmental">
+                    <h2>Environmental Impact</h2>
+                    <div class="env-stats">
+                        <div class="env-item">
+                            <span class="icon">🌳</span>
+                            <span class="label">CO² Reduced</span>
+                            <span class="value">2.5 kg</span>
+                        </div>
+                        <div class="env-item">
+                            <span class="icon">⚡</span>
+                            <span class="label">Green Energy</span>
+                            <span class="value">15.5 kWh</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer Status Bar -->
+        <footer class="status-bar">
+            <div class="status-indicator">
+                <span class="status-icon">🟢</span>
+                <span class="status-text">System Normal</span>
+            </div>
+            <div class="update-time">Last Update: 2s ago</div>
+            <div class="version">v2.0.0</div>
+        </footer>
+    </div>
+
+    <!-- Libraries -->
+    <script src="https://unpkg.com/mqtt/dist/mqtt.min.js"></script>
+
+    <!-- Application Scripts -->
+    <script src="js/main.js"></script>
+    <script src="js/charts.js"></script>
+    <script src="js/mqtt.js"></script>
+    <script src="js/weather.js"></script>
+    <script src="js/notifications.js"></script>
+</body>
+</html>
